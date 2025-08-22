@@ -1,17 +1,13 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "dev": "nodemon --watch src --exec ts-node src/index.ts",
+  "main": "dist/index.js",   
+    "scripts": {
+    "dev": "nodemon --exec ts-node src/index.ts",
     "build": "tsc",
     "start": "node dist/index.js",
     "test": "echo \"No tests yet\" && exit 0"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^17.2.1",
