@@ -16,7 +16,7 @@ async function bootstrap() {
   }
 
   const app = express();
-  app.use(cors({ origin: config.clientOrigin, credentials: true }));
+  app.use(cors({ origin: "*", methods: ["GET", "POST"], credentials: false }));
   app.use(express.json());
 
   app.get('/', (_req, res) => {
@@ -27,8 +27,8 @@ async function bootstrap() {
 
   const server = http.createServer(app);
   const io = new Server(server, {
-    cors: { origin: config.clientOrigin, credentials: true },
-  });
+  cors: { origin: "*", methods: ["GET", "POST"], credentials: false },
+});
 
   setupSocket(io);
 
