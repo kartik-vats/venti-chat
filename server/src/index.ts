@@ -27,7 +27,11 @@ async function bootstrap() {
 
   const server = http.createServer(app);
   const io = new Server(server, {
-  cors: { origin: "*", methods: ["GET", "POST"], credentials: false },
+  cors: {
+    origin: "https://venti-chat-1.onrender.com",  // your frontend domain
+    methods: ["GET", "POST"],
+    credentials: true
+  }
 });
 
   setupSocket(io);
